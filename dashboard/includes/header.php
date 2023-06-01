@@ -28,7 +28,7 @@ $email = User::getEmail($conn, $_SESSION['user_id']);
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>IoTkiddie Dashboard</title>
+  <title>NYH Smart temp</title>
   <link rel="icon" type="image/x-icon" href="/includes/img/favicon.ico">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -60,16 +60,16 @@ $email = User::getEmail($conn, $_SESSION['user_id']);
 
 </head>
 
-<body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+<body class="hold-transition light-mode sidebar-mini layout-fixed layout-footer-fixed">
   <div class="wrapper">
 
     <!-- Preloader -->
     <div class="preloader flex-column justify-content-center align-items-center">
-      <img class="animation__wobble" src="includes/img/LOGO.png" alt="IoTbundle LOGO" height="60" width="60">
+      <img class="animation__wobble" src="includes/img/LOGO.png" alt="NYH Smart temp LOGO" height="60" width="60">
     </div>
 
     <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand navbar-dark">
+    <nav class="main-header navbar navbar-expand navbar-light">
       <!-- Left navbar links -->
       <ul class="navbar-nav">
         <li class="nav-item">
@@ -95,15 +95,15 @@ $email = User::getEmail($conn, $_SESSION['user_id']);
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <aside class="main-sidebar sidebar-light-primary elevation-4">
       <!-- Brand Logo -->
       <a href="index.php" class="brand-link">
-        <img src="includes/img/LOGO.png" alt="IoTkiddie Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">IoTkiddie</span>
+        <img src="includes/img/LOGO.png" alt="NYH Smart temp Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-dark">NYH Smart temp</span>
       </a>
 
       <!-- Sidebar -->
-      <div class="sidebar">
+      <div class="sidebar sidebar-primary">
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-1 mb-1 d-flex">
           <div class="image">

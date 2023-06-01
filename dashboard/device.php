@@ -8,7 +8,7 @@ require 'includes/header.php';
 
 
 <script type="text/javascript">
-  document.title = "<?= $activedevice['device_name'] . " | IoTkiddie Dashboard" ?>"
+  document.title = "<?= $activedevice['device_name'] . " | NYH Smart temp Dashboard" ?>"
 </script>
 
 <?php
@@ -69,45 +69,6 @@ if ($esp_id) {
   $projects = explode(",", $esp_id->project_id); ?>
   <?php if (count($projects) > 1 || (!is_null($activedevice['version']) && $activedevice['version'] >= 9)) : ?>
 
-    <ul class="nav nav-pills mb-3 ml-3" id="project-tab">
-
-      <?php
-
-      if (isset($_GET['project']) && in_array($_GET['project'], $projects)) {
-        $project = $_GET['project'];
-      } else {
-        $project = $projects[0];
-      }
-
-      foreach ($projects as $i => $project_id) : ?>
-        <li class="nav-item">
-          <a class="nav-link btn-secondary text-light <?= ($project_id == $project  && !isset($_GET['p'])) ? "active" : "" ?>" id="project-<?= $project_id ?>-tab" href="device.php?id=<?= $_GET['id'] ?>&project=<?= $project_id ?>">
-
-            <?php if ($project_id == 0) : ?>
-              Custom</a></li>
-      <?php elseif ($project_id == 1) : ?>
-        AC Meter</a></li>
-      <?php elseif ($project_id == 2) : ?>
-        PM Meter</a></li>
-      <?php elseif ($project_id == 3) : ?>
-        DC Meter</a></li>
-      <?php elseif ($project_id == 4) : ?>
-        DHT</a></li>
-      <?php elseif ($project_id == 5) : ?>
-        SmartFarm Solar</a></li>
-      <?php elseif ($project_id == 6) : ?>
-        AC Meter 3 Phase</a></li>
-        <?php elseif ($project_id == 7) : ?>
-        Battery</a></li>
-      <?php endif; ?>
-    <?php endforeach; ?>
-
-    <li class="nav-item">
-      <a class="nav-link btn-secondary text-light <?= (isset($_GET['p']) && $_GET['p'] == "pin") ? "active" : "" ?>" id="pin-tab" href="device.php?id=<?= $_GET['id'] ?>&p=pin">
-        Pin</a>
-
-
-    </ul>
 <?php endif;
 } ?>
 

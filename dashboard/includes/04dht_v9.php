@@ -14,17 +14,13 @@ if (!isset($activedevice)) {
 <section class="content">
     <div class="container-fluid">
 
-
         <div class="d-inline-flex flex-column">
             <div class="btn-group btn-group-toggle mb-3 " data-toggle="buttons">
-                <label class="btn btn-secondary active">
+                <label class="btn btn-primary active">
                     <input type="radio" name="options" id="overview_option" href="#overview" autocomplete="off" checked> ภาพรวม
                 </label>
-                <label class="btn btn-secondary">
+                <label class="btn btn-primary">
                     <input type="radio" name="options" id="history_option" autocomplete="off"> ประวัติย้อนหลัง
-                </label>
-                <label class="btn btn-secondary">
-                    <input type="radio" name="options" id="setting_option" autocomplete="off"> ตั้งค่าอุปกรณ์
                 </label>
             </div>
         </div>
@@ -32,7 +28,7 @@ if (!isset($activedevice)) {
 
         <div class="row">
             <div class="col-md-6 col-sm-12" id="value">
-                <div class="card">
+                <div class="card card-primary">
                     <!-- Loading (remove the following to stop the loading)-->
                     <div class="overlay dark">
                         <i class="fas fa-3x fa-sync-alt"></i>
@@ -95,15 +91,15 @@ if (!isset($activedevice)) {
                     <div class="card-header">
                         <h5 class="card-title" id="chart_name">อุณหภูมิล่าสุด</h5>
                         <div class="card-tools history_option_class">
-                            <ul class="nav nav-pills ml-auto p-2">
+                            <ul class="nav nav-info nav-pills ml-auto p-2">
                                 <li class="nav-item day_view_class p-1"><a class="nav-link active" id="day_view" href="#Chart1" data-toggle="tab">รายวัน</a></li>
-                                <li class="nav-item day_view_class p-1"><a class="nav-link" id="mouth_view" href="#Charthistory" data-toggle="tab">เดือน</a></li>
+                                <li class="nav-item day_view_class p-1"><a class="nav-link " id="mouth_view" href="#Charthistory" data-toggle="tab">เดือน</a></li>
                                 <li class="nav-item day_view_class p-1 pr-2"><a class="nav-link" id="history_view" href="#uplot" data-toggle="tab">ย้อนหลัง</a></li>
 
 
 
                                 <div class="btn-group month-view-page">
-                                    <button type="button" class="btn btn-outline-secondary btn-sm dropdown-toggle text-light" data-toggle="dropdown" data-offset="-52">
+                                    <button type="button" class="btn btn-outline-secondary btn-sm dropdown-toggle text-dark" data-toggle="dropdown" data-offset="-52">
                                         <i class="fas fa-bars"></i>
                                     </button>
                                     <div class="dropdown-menu history-dropdown" role="menu">
@@ -111,12 +107,12 @@ if (!isset($activedevice)) {
                                         <p id="month-bar" class="dropdown-item">กราฟแท่ง</p>
                                     </div>
                                 </div>
-                                <button type="button" id="month_csvdownload" class="btn btn-outline-secondary text-light btn-sm month-view-page" title="download csv file">
+                                <button type="button" id="month_csvdownload" class="btn btn-outline-secondary text-dark btn-sm month-view-page" title="download csv file">
                                     <i class="fa-solid fa-download"></i>&nbsp;<span>CSV</span>
                                 </button>
 
                                 <div class="btn-group history_view_class">
-                                    <button type="button" class="btn btn-outline-secondary btn-sm dropdown-toggle text-light" data-toggle="dropdown" data-offset="-52">
+                                    <button type="button" class="btn btn-outline-secondary btn-sm dropdown-toggle text-dark" data-toggle="dropdown" data-offset="-52">
                                         <i class="fas fa-bars"></i>
                                     </button>
                                     <div class="dropdown-menu history-dropdown" role="menu">
@@ -126,13 +122,13 @@ if (!isset($activedevice)) {
                                         <p id="history-daily" class="dropdown-item">รายวัน</p>
                                     </div>
                                 </div>
-                                <button type="button" id="csvdownload" class="btn btn-outline-secondary text-light btn-sm  history_view_class" title="download csv file">
+                                <button type="button" id="csvdownload" class="btn btn-outline-secondary text-dark btn-sm  history_view_class" title="download csv file">
                                     <i class="fa-solid fa-download"></i>&nbsp;<span>CSV</span>
                                 </button>
-                                <button type="button" class="btn btn-outline-secondary text-light btn-sm daterange history_view_class" title="Date range">
+                                <button type="button" class="btn btn-outline-secondary text-dark btn-sm daterange history_view_class" title="Date range">
                                     <i class="far fa-calendar-alt"></i>&nbsp;<span></span>
                                 </button>
-                                <button type="button" class="btn btn-tool history_view_class text-light " data-card-widget="collapse">
+                                <button type="button" class="btn btn-tool text-dark " data-card-widget="collapse">
                                     <i class="fas fa-minus"></i>
                                 </button>
 
@@ -177,7 +173,7 @@ if (!isset($activedevice)) {
 
 
             <div class="col-md-12" id="google_table">
-                <div class="card">
+                <div class="card card-primary">
 
                     <!-- Loading (remove the following to stop the loading)-->
                     <div class="overlay dark">
@@ -197,49 +193,6 @@ if (!isset($activedevice)) {
                     <!-- /.card-header -->
                     <div class="card-body text-dark">
                         <div id="table_div" class="text-dark"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 setting-page" id="setting-form">
-
-                <!-- setting form -->
-                <div class="card">
-
-                    <!-- Loading (remove the following to stop the loading)-->
-                    <div class="overlay dark">
-                        <i class="fas fa-3x fa-sync-alt"></i>
-                        <h3></h3>
-                    </div>
-                    <!-- end loading -->
-
-                    <div class="card-header">
-                        <h5 class="card-title"><i class="fa-brands fa-line"></i> Line</h5>
-                        <div class="card-tools">
-                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                <i class="fas fa-minus"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <!-- /.card-header -->
-                    <div class="card-body text-dark">
-
-                        <div class="form-group mb-3" id="getLineToken">
-                            <label for="linetoken" data-toggle="tooltip" title="Token ที่ได้จาก Line notify">Line Token <a target="_blank" href="linetoken_get.php?id=<?= $_GET['id'] ?>">สมัครรับโทเค็น</a></label>
-                            <input type="text" class="form-control" id="linetoken" placeholder="Line token">
-                        </div>
-                        <div class="form-check mb-2">
-                            <input type="checkbox" class="form-check-input" id="dailynotify">
-                            <label class="form-check-label" for="dailynotify" data-toggle="tooltip" title="แจ้งตอนเที่ยงคืนของทุกวัน">แจ้งเตือนค่าเฉลี่ยของแต่ละวัน</label>
-                        </div>
-                        <hr>
-                        <div class="form-check mb-2" hidden>
-                            <input type="checkbox" class="form-check-input" id="offlinenotify">
-                            <label class="form-check-label" for="offlinenotify" data-toggle="tooltip" title="ออฟไลน์เมื่อเกิดเหตุการณ์ไฟดับ เน็ตหลุด หรืออื่นๆ และแจ้งเมื่อกลับมาออนไลน์แล้ว">แจ้งเตือนสถานะอุปกรณ์ online offline</label>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <button id="linedata-save" type="submit" class="btn btn-primary">บันทึก</button>
                     </div>
                 </div>
             </div>

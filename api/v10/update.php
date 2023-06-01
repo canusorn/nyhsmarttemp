@@ -59,7 +59,7 @@ if (!empty($_POST) && isset($_POST['esp_id']) && isset($_POST['user_id'])) {
             // var_dump($payload);
             // echo '<br>';
         }
-
+        
         if ($esp_id->need_ota) echo "&32765";   // if need ota update from server
 
 

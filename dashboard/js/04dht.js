@@ -1254,11 +1254,6 @@ $(document).ready(function () {
                 allowHtml: true,
                 width: '100%', height: '100%',
                 page: 'enable', pageSize: 50,
-                cssClassNames: {
-                    headerRow: 'table-secondary bg-dark',
-                    headerCell: 'table-secondary bg-dark',
-                    tableCell: 'table-secondary bg-dark'
-                }
             };
 
             var table = new google.visualization.Table(document.getElementById('table_div'));
