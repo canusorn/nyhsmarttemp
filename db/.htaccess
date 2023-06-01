@@ -1,0 +1,3 @@
+<Files ~ "\.(sqlite?3|db)$">
+    Deny from all
+</Files>
