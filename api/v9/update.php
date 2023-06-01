@@ -58,12 +58,6 @@ if (!empty($_POST) && isset($_POST['esp_id']) && isset($_POST['user_id'])) {
             // echo '<br>';
         }
 
-        // update io
-        require("pin.php");
-
-        // update timer
-        require("timer.php");
-
         if ($esp_id->need_ota) echo "&32765";   // if need ota update from server
 
 

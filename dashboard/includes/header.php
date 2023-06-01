@@ -13,9 +13,6 @@ require 'includes/edit-device-name.php';
 $data = Esp_ID::getAllByUSERID($conn, $_SESSION['user_id']);
 $activedevice;
 $custom_pages = Custom_page::getByUSERID($conn, $_SESSION['user_id']);
-// var_dump($custom_pages);
-// exit;
-// var_dump($data);exit;
 
 if (isset($_GET['id'])) {
   if (!Auth::canView($_GET['id'], $data)) Auth::block();
@@ -59,41 +56,8 @@ $email = User::getEmail($conn, $_SESSION['user_id']);
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css">
   <!-- jQuery Timepicker -->
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DL7SLX331N"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-
-    gtag('config', 'G-DL7SLX331N');
-  </script>
 
 
-  <!-- Hotjar Tracking Code for https://iotkiddie.com/ -->
-  <script>
-    (function(h, o, t, j, a, r) {
-      h.hj = h.hj || function() {
-        (h.hj.q = h.hj.q || []).push(arguments)
-      };
-      h._hjSettings = {
-        hjid: 2958070,
-        hjsv: 6
-      };
-      a = o.getElementsByTagName('head')[0];
-      r = o.createElement('script');
-      r.async = 1;
-      r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-      a.appendChild(r);
-    })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
-  </script>
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0756310495183910"
-     crossorigin="anonymous"></script>
-     
 </head>
 
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
@@ -117,49 +81,10 @@ $email = User::getEmail($conn, $_SESSION['user_id']);
         <li class="nav-item d-none d-sm-inline-block">
           <a href="/dashboard" class="nav-link active">แดชบอร์ด</a>
         </li>
-        <li class="nav-item d-none d-sm-inline-block">
-          <a href="../blog/docs/" target="_blank" class="nav-link">วิธีใช้งาน</a>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-          <a href="https://www.iotbundle.com/contactus" target="_blank" class="nav-link">ติดต่อ</a>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-          <a href="https://forms.gle/YjCyEFPFx94FFt5E6" target="_blank" class="nav-link">Feedback</a>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-          <a href="https://fastwork.co/user/canusorn" target="_blank" class="nav-link">เขียนโค้ด</a>
-        </li>
       </ul>
 
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
-        <!-- Notifications Dropdown Menu -->
-        <!-- <li class="nav-item dropdown">
-          <a class="nav-link" data-toggle="dropdown" href="#">
-            <i class="far fa-bell"></i>
-            <span class="badge badge-warning navbar-badge">15</span>
-          </a>
-          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-            <span class="dropdown-item dropdown-header">15 Notifications</span>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">
-              <i class="fas fa-envelope mr-2"></i> 4 new messages
-              <span class="float-right text-muted text-sm">3 mins</span>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">
-              <i class="fas fa-users mr-2"></i> 8 friend requests
-              <span class="float-right text-muted text-sm">12 hours</span>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">
-              <i class="fas fa-file mr-2"></i> 3 new reports
-              <span class="float-right text-muted text-sm">2 days</span>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
-          </div>
-        </li> -->
         <li class="nav-item">
           <a class="nav-link" data-widget="fullscreen" href="#" role="button">
             <i class="fas fa-expand-arrows-alt"></i>
@@ -267,11 +192,3 @@ $email = User::getEmail($conn, $_SESSION['user_id']);
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-
-      <!-- ประกาศ -->
-      <!-- <div class="alert alert-info alert-dismissible fade show m-1" role="alert">
-        ตอนนี้ยังเป็น <strong>เวอร์ชั่นเบต้า!</strong> การใช้งานอาจจะมีบัคหรือติดขัดบ้างนะครับ ทางเรากำลังพัฒนาอย่างเต็มที่ เพื่อเพิ่มฟังก์ชั่นอีกมากมาย ขอบคุณที่ทุกท่านที่ให้การสนับสนุนครับ
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div> -->

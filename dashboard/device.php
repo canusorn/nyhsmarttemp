@@ -155,18 +155,6 @@ if ($esp_id) {
 
 </div>
 
-<div class="container">
-  <div class="row justify-content-md-center">
-    <div class="col">
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0756310495183910" crossorigin="anonymous"></script>
-      <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-0756310495183910" data-ad-slot="7517734347"></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    </div>
-  </div>
-</div>
-
 <!-- for rename device -->
 <div class="modal fade" id="editdevicename" tabindex="-1" aria-labelledby="edit-device-name" aria-hidden="true">
   <div class="modal-dialog">
