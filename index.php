@@ -2,15 +2,14 @@
 
 require 'includes/init.php';
 
-require 'includes/redirect.php';
-
+Url::redirect('/login.php');
 ?>
 
 <?php require 'includes/header.php'; ?>
 
 <header class="text-light text-center" style="background: url('includes/img/homeiot.jpg') no-repeat center center;height: 400px;background-size: cover;padding-top: 4rem;padding-bottom: 8rem;text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column" style="max-width: 42em">
-        <h1>IoT kiddie</h1>
+        <h1>IoT Temperature</h1>
         <p class="lead">IoT ง่ายๆ สำหรับทุกคน</p>
 
         <?php if (Auth::isLoggedIn()) : ?>

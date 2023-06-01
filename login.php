@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>IoTkiddie | Log in</title>
+    <title>IoT Temperature datalogger | Log in</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="dashboard/includes/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="/"><b>IoTkiddie</b></a>
+            <a href="/"><b>IoT Temperature Data Logger</b></a>
         </div>
         <!-- /.login-logo -->
         <div class="card">

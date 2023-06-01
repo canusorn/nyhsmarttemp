@@ -2,7 +2,7 @@
 <html class="h-100">
 
 <head>
-    <title>My IoT</title>
+    <title>IoT Temperature</title>
     <meta charset="utf-8">
     <link rel="icon" type="image/x-icon" href="/includes/img/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,32 +17,6 @@
 
     <!-- Custom styles for this template -->
     <!-- <link href="../css/cover.css" rel="stylesheet"> -->
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DL7SLX331N"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-DL7SLX331N');
-</script>
-
-
-<!-- Hotjar Tracking Code for https://iotkiddie.com/ -->
-    <script>
-    (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:2958070,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0756310495183910"
-     crossorigin="anonymous"></script>
      
 </head>
 
@@ -67,7 +41,7 @@
                         <li class="nav-item"><a class="nav-link" href="/logout.php">ออกจากระบบ</a></li>
                     <?php else : ?>
                         <li class="nav-item"><a class="nav-link" href="/login.php">เข้าสู่ระบบ</a></li>
-                        <li class="nav-item"><a class="btn btn-outline-primary" href="/signup.php">สมัครสมาชิกใหม่</a></li>
+                        <!-- <li class="nav-item"><a class="btn btn-outline-primary" href="/signup.php">สมัครสมาชิกใหม่</a></li> -->
                     <?php endif; ?>
 
                 </ul>
