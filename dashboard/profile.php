@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <script type="text/javascript">
-  document.title = "<?= "Profile | IoTkiddie Dashboard" ?>"
+  document.title = "<?= "Profile | NYH Smart" ?>"
 </script>
 
 <!-- Content Header (Page header) -->

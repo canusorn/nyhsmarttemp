@@ -30,20 +30,8 @@
             <div class="info-box">
               <span class="info-box-icon bg-info elevation-1">
 
-                <?php if ($device['project_id'] == 0) : ?>
-                  <i class="fa-solid fa-wifi"></i>
-                <?php elseif ($device['project_id'] == 1) : ?>
-                  <i class="fa-solid fa-plug"></i>
-                <?php elseif ($device['project_id'] == 2) : ?>
-                  <i class="fa-solid fa-head-side-mask"></i>
-                <?php elseif ($device['project_id'] == 3) : ?>
-                  <i class="fa-solid fa-car-battery"></i>
-                <?php elseif ($device['project_id'] == 4) : ?>
+                <?php if ($device['project_id'] == 4) : ?>
                   <i class="fa-solid fa-temperature-half"></i>
-                <?php elseif ($device['project_id'] == 6) : ?>
-                  <i class="fa-solid fa-plug"></i>
-                <?php elseif ($device['project_id'] == 7) : ?>
-                  <i class="fa-solid fa-battery-three-quarters"></i>
                 <?php else : ?>
                   <i class="fa-solid fa-wifi"></i>
                 <?php endif; ?>

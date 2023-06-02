@@ -33,9 +33,6 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">หน้าแรก</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/preview">Live preview</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/blog">Blog</a></li>
-                    <li class="nav-item"><a href="https://www.iotbundle.com/contactus" target="_blank" class="nav-link">ช่องทางติดต่อ</a></li>
                     <?php if (Auth::isLoggedIn()) : ?>
                         <li class="nav-item"><a class="nav-link" href="/dashboard/">แดชบอร์ด</a></li>
                         <li class="nav-item"><a class="nav-link" href="/logout.php">ออกจากระบบ</a></li>

@@ -2,8 +2,8 @@
 
 require 'includes/init.php';
 
-if (Auth::isLoggedIn()) {
-    Url::redirect('/dashboard');
+if (!Auth::isLoggedIn()) {
+    Url::redirect('/login');
 }
 
 $user = new User();
@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>IoTkiddie | สมัครสมาชิกใหม่</title>
+    <title>NYH Smart | เพิ่มสมาชิกใหม่</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -54,12 +54,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body class="hold-transition register-page">
     <div class="register-box">
         <div class="register-logo">
-            <a href="../../index.php"><b>IoTkiddie</b></a>
+            <a href="../../index.php"><b>เพิ่มสมาชิกใหม่ | NYH Smart</b></a>
         </div>
 
         <div class="card">
             <div class="card-body register-card-body">
-                <p class="login-box-msg">สมัครสมาชิกใหม่</p>
+                <p class="login-box-msg">เพิ่มสมาชิกใหม่</p>
 
                 <?php if (!empty($user->errors)) : ?>
                     <div class="alert alert-warning" role="alert">
@@ -95,14 +95,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-8">
+                        <!-- <div class="col-8">
                             <div class="icheck-primary">
                                 <input type="checkbox" id="agreeTerms" name="terms" value="agree">
                                 <label for="agreeTerms">
                                     ฉันยอมรับ<a href="#">เงือนไข</a>
                                 </label>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- /.col -->
                         <div class="col-4 mb-2">
                             <button type="submit" class="btn btn-primary btn-block">Register</button>
@@ -123,7 +123,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </a>
       </div> -->
 
-                <a href="login.php" class="text-center">เป็นสมาชิกอยู่แล้ว</a>
+                <!-- <a href="login.php" class="text-center">เป็นสมาชิกอยู่แล้ว</a> -->
             </div>
             <!-- /.form-box -->
         </div><!-- /.card -->
