@@ -15,7 +15,7 @@ require 'includes/header.php';
 // device to display
 if (isset($_GET['id'])) {
   $esp_id = Esp_ID::getByESPID($conn, $_GET['id']);
-  // var_dump($esp_id);
+  // var_dump($esp_id);exit;
   // var_dump($activedevice['project_id']);
 }
 ?>
@@ -80,36 +80,8 @@ if ($esp_id) {
   } else {
     if (!isset($project)) $project = $esp_id->project_id;
 
-    if ($project == 0) {
-        require 'includes/custom/custom.php';
-    }
-    else if ($project == 1) {
-
-      if (!is_null($activedevice['version']) && $activedevice['version'] >= 9)
-        require 'includes/01acmeter_v9.php';
-      else
-        require 'includes/01acmeter.php';
-    } else if ($project == 2) {
-      if (!is_null($activedevice['version']) && $activedevice['version'] >= 9)
-        require 'includes/02pmmeter_v9.php';
-      else
-        require 'includes/02pmmeter.php';
-    } else if ($project == 3) {
-      require 'includes/03dcmeter_v9.php';
-    } else if ($project == 4) {
-      if (!is_null($activedevice['version']) && $activedevice['version'] >= 9)
-        require 'includes/04dht_v9.php';
-      else
-        require 'includes/04dht.php';
-    } else if ($project == 5) {
-      if (!is_null($activedevice['version']) && $activedevice['version'] >= 9)
-        require 'includes/05smartfarm-solar_v9.php';
-      else
-        require 'includes/05smartfarm-solar.php';
-    } else if ($project == 6) {
-      require 'includes/06acmeter_3p_v9.php';
-    } else if ($project == 7) {
-      require 'includes/07battery_v9.php';
+    if ($project == 4) {
+      require 'includes/04dht_v9.php';
     }
   }
   ?>

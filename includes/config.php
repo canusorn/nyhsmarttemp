@@ -1,16 +1,16 @@
 <?php
 
 // local server
-// define('DB_HOST','localhost');
-// define('DB_NAME','nyhsmarttemp');
-// define('DB_USER','root');
-// define('DB_PASS','');
-
-
 define('DB_HOST','localhost');
-define('DB_NAME','nyhsmar_db');
-define('DB_USER','nyhsmar_admin');
-define('DB_PASS','4d9i2V3x*');
+define('DB_NAME','nyhsmarttemp');
+define('DB_USER','root');
+define('DB_PASS','');
+
+
+// define('DB_HOST','localhost');
+// define('DB_NAME','nyhsmar_db');
+// define('DB_USER','nyhsmar_admin');
+// define('DB_PASS','4d9i2V3x*');
 
 
 // allow no authen espid which not regis before to use

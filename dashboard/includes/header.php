@@ -10,15 +10,18 @@ $conn = $db->getConn();
 
 require 'includes/edit-device-name.php';
 
-$data = Esp_ID::getAllByUSERID($conn, $_SESSION['user_id']);
+// $data = Esp_ID::getAllByUSERID($conn, $_SESSION['user_id']);
+$data = Esp_ID::getAllESPID($conn, '*', "array");
+// var_dump($data);exit;
 $activedevice;
 $custom_pages = Custom_page::getByUSERID($conn, $_SESSION['user_id']);
 
-if (isset($_GET['id'])) {
-  if (!Auth::canView($_GET['id'], $data)) Auth::block();
-}
+// if (isset($_GET['id'])) {
+//   if (!Auth::canView($_GET['id'], $data)) Auth::block();
+// }
 
 $email = User::getEmail($conn, $_SESSION['user_id']);
+// var_dump($email);exit;
 ?>
 
 
@@ -110,14 +113,7 @@ $email = User::getEmail($conn, $_SESSION['user_id']);
             <i class="fa-solid fa-user-large"></i>
           </div>
           <div class="info">
-            <?php if (empty($data)) : {
-
-                echo ("<a href='profile.php' class='d-block'>" . $email . "</a>");
-              } ?>
-            <?php else : ?>
-              <a href='profile.php' class='d-block'>
-                <?= $data[0]['email'] ?></a>
-            <?php endif; ?>
+            <a href='profile.php' class='d-block'> . <?= $email["email"]; ?> . </a>
             <div class="d-block">
               <a href="../logout.php" class="pt-2">
                 <i class="fa-solid fa-right-from-bracket"></i>
@@ -179,10 +175,22 @@ $email = User::getEmail($conn, $_SESSION['user_id']);
               <a href="profile.php" class="nav-link">
                 <i class="nav-icon fas fa-solid fa-address-card"></i>
                 <p>
-                  Profile
+                  My Profile
                 </p>
               </a>
             </li>
+
+            <?php if ($email["position"] == "admin") ?>
+            <li class="nav-item">
+              <a href="profile.php" class="nav-link">
+                <i class="nav-icon fa-solid fa-user-plus"></i>
+                <p>
+                  Add user
+                </p>
+              </a>
+            </li>
+            <php endif; ?>
+
           </ul>
         </nav>
         <!-- /.sidebar-menu -->

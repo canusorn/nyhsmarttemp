@@ -58,6 +58,25 @@ class Esp_ID
         }
     }
 
+    public static function getAllESPID($conn, $columns = '*', $fetch = "class")
+    {
+        $sql = "SELECT $columns
+        FROM esp_id
+        WHERE 1";
+
+        $stmt = $conn->prepare($sql);
+
+        if ($fetch == "class") {
+            $stmt->setFetchMode(PDO::FETCH_CLASS, 'Esp_ID');
+            if ($stmt->execute()) {
+                return $stmt->fetch();
+            }
+        } elseif ($fetch == "array") {
+            if ($stmt->execute()) {
+                return $stmt->fetchAll(PDO::FETCH_ASSOC);
+            }
+        }
+    }
 
     public static function getDevice($conn, $user_id, $columns = '*')
     {

@@ -126,6 +126,6 @@ class User
                 WHERE user_id = $user_id";
         $result = $conn->query($sql);
         $email = $result->fetchAll(PDO::FETCH_ASSOC);
-        return $email[0]['email'];
+        return $email[0];
     }
 }
