@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try {
         if ($user->create($conn)) {
-            Auth::login($user->user_id);
+            // Auth::login($user->user_id);
             Url::redirect('/dashboard');
         }
     } catch (Exception $e) {

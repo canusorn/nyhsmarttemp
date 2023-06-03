@@ -182,7 +182,7 @@ $email = User::getEmail($conn, $_SESSION['user_id']);
 
             <?php if ($email["position"] == "admin") ?>
             <li class="nav-item">
-              <a href="profile.php" class="nav-link">
+              <a href="../signup.php" class="nav-link">
                 <i class="nav-icon fa-solid fa-user-plus"></i>
                 <p>
                   Add user
