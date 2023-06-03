@@ -44,7 +44,6 @@ $(document).ready(function () {
     var dhtChart, Chart_history;
     displayChart();
     getLastData();
-    ioread();
 
     $("#uplot").hide();
     $("#google_table").hide();
@@ -468,8 +467,6 @@ $(document).ready(function () {
         }
 
     }
-
-    setInterval(ioread, 30000); // 1000 = 1 second
 
 
     $("input[type='checkbox']").each(function () {
@@ -1270,7 +1267,7 @@ $(document).ready(function () {
         let minutesdiff = end.diff(start, 'minutes');
         let minutesfromnow = moment().diff(start, 'minutes');
         var datarange;
-        if (minutesdiff <= 60 * 24 * 7 && minutesfromnow <= 60 * 24 * 7) {
+        if (minutesdiff <= 60 * 24 * 30 && minutesfromnow <= 60 * 24 * 30) {
             datarange = "sec";
             $("#history-rawdata").hide();
             $("#history-minute").show();
@@ -1282,7 +1279,7 @@ $(document).ready(function () {
                 $("#history-daily").hide();
             }
         }
-        else if (minutesdiff <= 60 * 24 * 31 * 3 && minutesfromnow <= 60 * 24 * 31 * 3) {
+        else if (minutesdiff <= 60 * 24 * 31 * 12 && minutesfromnow <= 60 * 24 * 31 * 12) {
             datarange = "hr";
             $("#history-rawdata").hide();
             $("#history-minute").hide();
@@ -1579,75 +1576,3 @@ $(document).ready(function () {
     });
 
 });
-
-
-
-// for io control
-function iowrite() {
-    var io = 0b00000000;
-    $("input[type='checkbox']").each(function () {
-        if ($(this).prop("checked")) {
-            if ($(this).attr('id') == 'D0') io |= 0b1;
-            else if ($(this).attr('id') == 'D1') io |= 0b10;
-            else if ($(this).attr('id') == 'D2') io |= 0b100;
-            else if ($(this).attr('id') == 'D3') io |= 0b1000;
-            else if ($(this).attr('id') == 'D4') io |= 0b10000;
-            else if ($(this).attr('id') == 'D5') io |= 0b100000;
-            else if ($(this).attr('id') == 'D6') io |= 0b1000000;
-            else if ($(this).attr('id') == 'D7') io |= 0b10000000;
-            else if ($(this).attr('id') == 'D8') io |= 0b100000000;
-        }
-    });
-
-    // console.log(io.toString(2));
-    // console.log(io);
-
-    $.post('ajax/io.php', {
-        co: io, // control out
-        id: esp_id
-    })
-        .done(function (response) {
-            // console.log(response);
-            if (response == 1) {
-                prev_io = io;
-            } else {
-                // console.log("update database error");
-                iodisplay();
-            }
-        })
-        .fail(function () {
-            // console.log("network error");
-            iodisplay();
-        });
-}
-
-function ioread() {
-
-    $.post('ajax/io.php', {
-        ci: 0, // control out
-        id: esp_id
-    })
-        .done(function (response) {
-            var json = JSON.parse(response);
-            // console.log(json.io);
-            prev_io = json.io;
-            iodisplay();
-        })
-        .fail(function () {
-            // console.log("error");
-        });
-}
-
-function iodisplay() {
-
-    for (let i = 0; i < 9; i++) { //D0 -> D8
-        //   text += cars[i] + "<br>";
-        if (prev_io & 0b100000000 >>> i) {
-            $("#D" + String(8 - i)).prop('checked', true);
-            // console.log("D" + String(8 - i) + " is on");
-        } else {
-            $("#D" + String(8 - i)).prop('checked', false);
-        }
-    }
-
-}

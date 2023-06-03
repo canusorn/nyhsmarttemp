@@ -54,12 +54,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body class="hold-transition register-page">
     <div class="register-box">
         <div class="register-logo">
-            <a href="../../index.php"><b>เพิ่มสมาชิกใหม่ | NYH Smart</b></a>
+            <a href="../../index.php"><b>เพิ่มสมาชิกใหม่</b></a>
         </div>
 
         <div class="card">
             <div class="card-body register-card-body">
-                <p class="login-box-msg">เพิ่มสมาชิกใหม่</p>
+                <p class="login-box-msg">สมาชิกใหม่</p>
 
                 <?php if (!empty($user->errors)) : ?>
                     <div class="alert alert-warning" role="alert">
@@ -95,14 +95,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                     </div>
                     <div class="row">
-                        <!-- <div class="col-8">
+                        <div class="col-8">
                             <div class="icheck-primary">
                                 <input type="checkbox" id="agreeTerms" name="terms" value="agree">
                                 <label for="agreeTerms">
-                                    ฉันยอมรับ<a href="#">เงือนไข</a>
+                                    ฉันยอมรับเงือนไข
                                 </label>
                             </div>
-                        </div> -->
+                        </div>
                         <!-- /.col -->
                         <div class="col-4 mb-2">
                             <button type="submit" class="btn btn-primary btn-block">Register</button>
