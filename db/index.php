@@ -48,7 +48,7 @@ session_start();
 Auth::requireLogin();
 
 //password to gain access
-$password = 'vo6liIN';
+$password = 'Pp0814918310';
 
 //directory relative to this file to search for databases (if false, manually list databases in the $databases variable)
 $directory = '.';
