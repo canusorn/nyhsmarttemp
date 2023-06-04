@@ -121,23 +121,23 @@ if ($needsecupdate) {
             ($interval_day && is_null($lastDays)) ||
             ($interval_day >= 2 && !is_null($lastDays))
         ) {
-            $line_token = Linenotify::getAll($data_sec->esp_id, 4);
-            if (isset($line_token['line_token']) && $line_token['daily_notify'] &&  $payload["status"]["sec"] == 'new sec data' &&  $payload["status"]["day"] == 'new day data') {
-                $line_sent[] = [4, $data_day->humid, $data_day->temp, $data_sec->esp_id, $line_token['line_token']];
-                $line_sent_status .= "project 4 line in condition \n";
-                // $line_result =  Linenotify::sentDHT($conn, $data_day->humid, $data_day->temp, $data_sec->esp_id, $line_token['line_token']);
-                // if ($line_result == "success")
-                //     $payload["status"]["line"] = "sent";
-                // else {
-                //     $datalog = $data_sec->time . "\n-ESPID:" . $data_sec->esp_id .  "\n-Result:" . $line_result . "\n\n";
-                //     file_put_contents('4dht.log', $datalog, FILE_APPEND);
-                //     $payload["status"]["line"] = "sent failed";
-                // }
-            } else {
-                if (isset($line_token['line_token'])) {
-                    $line_sent_status .= "project 4 line not in condition -> " . $payload["status"]["sec"] .  "\n";
-                }
-            }
+            // $line_token = Linenotify::getAll($data_sec->esp_id, 4);
+            // if (isset($line_token['line_token']) && $line_token['daily_notify'] &&  $payload["status"]["sec"] == 'new sec data' &&  $payload["status"]["day"] == 'new day data') {
+            //     $line_sent[] = [4, $data_day->humid, $data_day->temp, $data_sec->esp_id, $line_token['line_token']];
+            //     $line_sent_status .= "project 4 line in condition \n";
+            //     // $line_result =  Linenotify::sentDHT($conn, $data_day->humid, $data_day->temp, $data_sec->esp_id, $line_token['line_token']);
+            //     // if ($line_result == "success")
+            //     //     $payload["status"]["line"] = "sent";
+            //     // else {
+            //     //     $datalog = $data_sec->time . "\n-ESPID:" . $data_sec->esp_id .  "\n-Result:" . $line_result . "\n\n";
+            //     //     file_put_contents('4dht.log', $datalog, FILE_APPEND);
+            //     //     $payload["status"]["line"] = "sent failed";
+            //     // }
+            // } else {
+            //     if (isset($line_token['line_token'])) {
+            //         $line_sent_status .= "project 4 line not in condition -> " . $payload["status"]["sec"] .  "\n";
+            //     }
+            // }
 
             // detele old data
             Data_4_sec::deleteOldData($data_sec->esp_id);

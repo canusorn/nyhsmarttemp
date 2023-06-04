@@ -65,7 +65,7 @@ if (!empty($_POST) && isset($_POST['esp_id']) && isset($_POST['user_id'])) {
     }
 
     // notify line sent
-    require 'line_noti.php';
+    // require 'line_noti.php';
     // } else {
     //     echo ("0" . "&" . "wrong user");
     // }

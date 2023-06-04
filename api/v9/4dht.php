@@ -33,29 +33,6 @@ if ($needsecupdate) {
     }
 }
 
-// // check min diff
-if (!is_null($lastData))
-    $interval_min = strtotime($dateTime->format('Y-m-d H:i')) - strtotime($lastdatetime->format('Y-m-d H:i'));  //now-lastdata (in min)
-else $interval_min = 0;
-
-if ($interval_min && $needsecupdate) {
-    $data_min = new Data_4_min($_POST['esp_id']);
-    $data_min->createTables();
-
-    $data_sec_av = Data_4_sec::getAvMin($data_sec->esp_id, $lastdatetime->format('Y-m-d H:i'));
-    // var_dump($data_sec_av);
-    // if (!is_null($data_sec_av[0])) {
-        $data_min->time = $lastdatetime->format('Y-m-d H:i');
-        $data_min->humid = $data_sec_av[0];
-        $data_min->temp = $data_sec_av[1];
-
-        if (($re = $data_min->insert()) === true) {
-            $payload["status"]["min"] = 'new min data';
-        } else {
-            $payload["error"][] = '[4dht min], ' .  $data_min->time . ', error:' . json_encode($re);
-        }
-    // }
-
     $interval_hour = strtotime($dateTime->format('Y-m-d H:00')) - strtotime($lastdatetime->format('Y-m-d H:00'));
     // var_dump($interval_hour);
     if ($interval_hour) {
@@ -63,7 +40,7 @@ if ($interval_min && $needsecupdate) {
         $data_hr = new Data_4_hr($_POST['esp_id']);
         $data_hr->createTables();
 
-        $data_min_av = Data_4_min::getAvHr($data_sec->esp_id, $lastdatetime->format('Y-m-d H'));
+        $data_min_av = Data_4_sec::getAvMin($data_sec->esp_id, $lastdatetime->format('Y-m-d H'));
         // var_dump($data_min_av);
         // if (!is_null($data_min_av[0])) {
             $data_hr->time = $lastdatetime->format('Y-m-d H:00');
@@ -144,29 +121,28 @@ if ($interval_min && $needsecupdate) {
             ($interval_day && is_null($lastDays)) ||
             ($interval_day >= 2 && !is_null($lastDays))
         ) {
-            $line_token = Linenotify::getAll($data_sec->esp_id, 4);
-            if (isset($line_token['line_token']) && $line_token['daily_notify'] &&  $payload["status"]["sec"] == 'new sec data' &&  $payload["status"]["day"] == 'new day data') {
-                $line_sent[] = [4, $data_day->humid, $data_day->temp, $data_sec->esp_id, $line_token['line_token']];
-                $line_sent_status .= "project 4 line in condition \n";
-                // $line_result =  Linenotify::sentDHT($conn, $data_day->humid, $data_day->temp, $data_sec->esp_id, $line_token['line_token']);
-                // if ($line_result == "success")
-                //     $payload["status"]["line"] = "sent";
-                // else {
-                //     $datalog = $data_sec->time . "\n-ESPID:" . $data_sec->esp_id .  "\n-Result:" . $line_result . "\n\n";
-                //     file_put_contents('4dht.log', $datalog, FILE_APPEND);
-                //     $payload["status"]["line"] = "sent failed";
-                // }
-            } else {
-                if (isset($line_token['line_token'])) {
-                    $line_sent_status .= "project 4 line not in condition -> " . $payload["status"]["sec"] .  "\n";
-                }
-            }
+            // $line_token = Linenotify::getAll($data_sec->esp_id, 4);
+            // if (isset($line_token['line_token']) && $line_token['daily_notify'] &&  $payload["status"]["sec"] == 'new sec data' &&  $payload["status"]["day"] == 'new day data') {
+            //     $line_sent[] = [4, $data_day->humid, $data_day->temp, $data_sec->esp_id, $line_token['line_token']];
+            //     $line_sent_status .= "project 4 line in condition \n";
+            //     // $line_result =  Linenotify::sentDHT($conn, $data_day->humid, $data_day->temp, $data_sec->esp_id, $line_token['line_token']);
+            //     // if ($line_result == "success")
+            //     //     $payload["status"]["line"] = "sent";
+            //     // else {
+            //     //     $datalog = $data_sec->time . "\n-ESPID:" . $data_sec->esp_id .  "\n-Result:" . $line_result . "\n\n";
+            //     //     file_put_contents('4dht.log', $datalog, FILE_APPEND);
+            //     //     $payload["status"]["line"] = "sent failed";
+            //     // }
+            // } else {
+            //     if (isset($line_token['line_token'])) {
+            //         $line_sent_status .= "project 4 line not in condition -> " . $payload["status"]["sec"] .  "\n";
+            //     }
+            // }
 
             // detele old data
             Data_4_sec::deleteOldData($data_sec->esp_id);
-            Data_4_min::deleteOldData($data_sec->esp_id);
             Data_4_hr::deleteOldData($data_sec->esp_id);
             Data_4_day::deleteOldData($data_sec->esp_id);
         }
     }
-}
+
