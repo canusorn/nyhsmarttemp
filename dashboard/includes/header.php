@@ -180,7 +180,7 @@ $email = User::getEmail($conn, $_SESSION['user_id']);
               </a>
             </li>
 
-            <?php if ($email["position"] == "admin") ?>
+            <?php if ($email["position"] == "admin"): ?>
             <li class="nav-item">
               <a href="../signup.php" class="nav-link">
                 <i class="nav-icon fa-solid fa-user-plus"></i>
@@ -189,7 +189,16 @@ $email = User::getEmail($conn, $_SESSION['user_id']);
                 </p>
               </a>
             </li>
-            <php endif; ?>
+            <?php endif; ?>
+
+              <li class="nav-item">
+                <a href="https://docs.google.com/forms/d/1WnK9txvHY_JCajQwM4vcye5SgUS5lp-XdhrrYHiwmas/edit" target="_blank" class="nav-link">
+                  <i class="nav-icon fa-solid fa-file-circle-check"></i>
+                  <p>
+                    Corrective Action
+                  </p>
+                </a>
+              </li>
 
           </ul>
         </nav>

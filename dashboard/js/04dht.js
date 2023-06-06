@@ -104,6 +104,7 @@ $(document).ready(function () {
                     pointHighlightFill: '#fff',
                     pointHighlightStroke: 'rgba(60,141,188,1)',
                     pointRadius: 0.5,
+                    datasetFill: false,
                 }, {
                     label: 'temp',
                     data: [],
@@ -116,11 +117,13 @@ $(document).ready(function () {
                     pointHighlightFill: '#fff',
                     pointHighlightStroke: 'rgba(220,220,220,1)',
                     pointRadius: 0.5,
+                    datasetFill: false,
                 },]
             },
             options: {
                 maintainAspectRatio: false,
                 responsive: true,
+                skipNull: true,
                 interaction: {
                     mode: 'nearest',
                     axis: 'x',
@@ -206,6 +209,7 @@ $(document).ready(function () {
                     pointStrokeColor: 'rgba(60,141,188,1)',
                     pointHighlightFill: '#fff',
                     pointHighlightStroke: 'rgba(60,141,188,1)',
+                    datasetFill: false,
                     // pointRadius: 0.5,
                 }, {
                     label: 'Temp-Lastday',
@@ -218,6 +222,7 @@ $(document).ready(function () {
                     pointHighlightFill: '#fff',
                     pointHighlightStroke: 'rgba(220,220,220,1)',
                     // pointRadius: 0.5,
+                    datasetFill: false,
                 }, {
                     label: 'Humid-Today',
                     data: [],
@@ -230,7 +235,7 @@ $(document).ready(function () {
                     pointHighlightFill: '#fff',
                     pointHighlightStroke: '#b643cd',
                     // pointRadius: 0.5,
-                    hidden: true,
+                    hidden: true,datasetFill: false,
                 }, {
                     label: 'Humid-Lastday',
                     data: [],
@@ -243,12 +248,13 @@ $(document).ready(function () {
                     pointHighlightFill: '#fff',
                     pointHighlightStroke: 'rgba(0,141,0,1)',
                     // pointRadius: 0.5,
-                    hidden: true,
+                    hidden: true,datasetFill: false,
                 },]
             },
             options: {
                 maintainAspectRatio: false,
                 responsive: true,
+                skipNull: true,
                 interaction: {
                     mode: 'nearest',
                     axis: 'x',
