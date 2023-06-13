@@ -64,7 +64,7 @@ SSD1306 เป็นชิปควบคุมสำหรับจอ OLED ซ
     temp -= 273.15;
 
 โดยจะมีการแปลง log ด้วย เนื่องจากกราฟระหว่างความต้านทานต่ออุณหภูมิจะเป็นกราฟ logarithm ตามรูปภาพด้านล่างนี้
-![enter image description here](https://www.ph-measurement.co.uk/file/2017/02/NTC-characteristics-300x181.png)
+![enter image description here](https://www.researchgate.net/publication/329896189/figure/fig6/AS:707448700665858@1545680322099/NTC-Thermistor-characteristic-curve-Resistance-R-vs-Temperature-T.png)
 
 #### โค้ด DHT22
 สำหรับโค้ด DHT22 จะไม่ซับซ้อนเนื่องจากมีไลบรารี่ให้ใช้งานได้เลย
@@ -73,5 +73,16 @@ SSD1306 เป็นชิปควบคุมสำหรับจอ OLED ซ
 
 ## เว็บเซิร์ฟเวอร์สำหรับเก็บข้อมูล
 	 1. โค้ดและการทำงาน
+สำหรับโค้ดบนเว็บไซต์จะอยู่ในลิ้งนี้ [Web code](https://github.com/canusorn/nyhsmarttemp)
+
+โดยโค้ดบนเว็บจะเขียนด้วยภาษา php ซึ่งจะทำหน้าที่รับข้อมูลจากเซนเซอร์และบอร์ด wemos d1 mini (esp8266) ซึ่งจะส่งข้อมูลผ่าน http post request ขึ้นมา
 
 	 2. ติดตั้งบนเว็บโฮสติ้ง
+
+ - web hosting สำหรับเว็บโฮสต์ที่ใช้ในโปรเจคนี้จะเลือกใช้ [hostatom.com](https://support.hostatom.com/aff.php?aff=2433) มีข้อดีคือ แพคเกจราคาไม่แพงมาก ซัพพอร์ตรวดเร็ว และมี ssl ให้ฟรีกับโดเมนเนมใหม่
+ - สมัครโดเมนเนมใหม่ โดยในที่นี้เลือกโดเมนเนมเป็น [nyhsmarttemp.com](https://nyhsmarttemp.com/) 
+ - อาจจะต้องรอก่อนเพื่อให้ระบบพร้อมใช้งานได้หลายชั่วโมง
+ - สร้าง my sql ดาต้าเบสใหม่ เลือก username และ password สำหรับเข้าใช้งาน และ import database file ขึ้นไป
+ - นำข้อมูล user และ pass ของดาต้าเบส ไปใส่ในไฟล์ php สำหรับการเข้าถึงข้อมูล ที่ includes\config.php
+ - deploy website โดยนำโค้ดสำหรับเว็บ อัพโหลดขึ้นเว็บ โดยผ่าน file manager เลือกอัพโหลดไฟล์ทั้งหมดไปที่โฟลเดอร์ httpdocs 
+ - สามารถใช้งานเว็บไซต์ได้เลย
