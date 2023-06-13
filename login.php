@@ -43,14 +43,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="login-logo">
             <a href="/"><b>IoT NYH Laboratory</b></a>
         </div>
+
         <!-- /.login-logo -->
         <div class="card">
             <div class="card-body login-card-body">
-                <p class="login-box-msg">เข้าสู่ระบบเพื่อเข้าใช้งาน</p>
+                <div class="row justify-content-center">
+                    <img class="mb-4" src="includes/img/NYH.png" alt="nyh" width="200">
+                </div>
+                <!-- <p class="login-box-msg">เข้าสู่ระบบเพื่อเข้าใช้งาน</p> -->
 
                 <?php if (!empty($error)) : ?>
                     <div class="alert alert-warning" role="alert">
-                    </i><?= $error ?>
+                        </i><?= $error ?>
                     </div>
                 <?php endif; ?>
 
