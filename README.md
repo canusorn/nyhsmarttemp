@@ -64,7 +64,7 @@ SSD1306 เป็นชิปควบคุมสำหรับจอ OLED ซ
     temp -= 273.15;
 
 โดยจะมีการแปลง log ด้วย เนื่องจากกราฟระหว่างความต้านทานต่ออุณหภูมิจะเป็นกราฟ logarithm ตามรูปภาพด้านล่างนี้
-![enter image description here](https://www.researchgate.net/publication/329896189/figure/fig6/AS:707448700665858@1545680322099/NTC-Thermistor-characteristic-curve-Resistance-R-vs-Temperature-T.png)
+![enter image description here](https://www.ph-measurement.co.uk/file/2017/02/NTC-characteristics-300x181.png)
 
 #### โค้ด DHT22
 สำหรับโค้ด DHT22 จะไม่ซับซ้อนเนื่องจากมีไลบรารี่ให้ใช้งานได้เลย
