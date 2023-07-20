@@ -98,7 +98,7 @@ class Data_4_hr
 
     public static function getAvDay($esp_id, $time){
         $pdo = new \PDO("sqlite:" . $_SERVER['DOCUMENT_ROOT'] . "/db/$esp_id.db");
-        $sql = "SELECT printf('%.1f',avg(humid)),printf('%.1f',avg(temp))
+        $sql = "SELECT avg(humid),avg(temp)
                 FROM '4_hr' 
                 WHERE time LIKE '{$time}%';";
         //var_dump($sql);

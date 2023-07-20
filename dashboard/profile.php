@@ -94,7 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="form-group row">
                                 <label for="email" class="col-sm-4 col-form-label">อีเมลล์</label>
                                 <div class="col-sm-8">
-                                    <input type="email" class="form-control  form-control-border" id="email" name="email" placeholder="Email" value="<?= $email ?>">
+                                    <input type="email" class="form-control  form-control-border" id="email" name="email" placeholder="Email" value="<?= $email["email"] ?>">
                                 </div>
                             </div>
                             <div class="form-group row">
