@@ -1415,7 +1415,7 @@ $(document).ready(function () {
     $("#history-minute").click(function () {
         if (raw_label_history.length == 0) return;
 
-        var new_label_timestamp = [];
+        var new_label_timestamp = [], new_label_history = [];
         label_split = ['2000-00-00 99', '99', '00'];
         var new_temp_history = [], new_humid_history = [];
         let temp_buff, humid_buff, index_buff;
@@ -1435,6 +1435,7 @@ $(document).ready(function () {
                 humid_buff = raw_humid_history[count];
                 index_buff = 1;
                 new_label_timestamp.push(Date.parse(timesplit[0] + ":" + timesplit[1]) / 1000);
+                new_label_history.push(timesplit[0] + ":" + timesplit[1]);
             } else {
                 temp_buff += raw_temp_history[count];
                 humid_buff += raw_humid_history[count];
@@ -1452,6 +1453,7 @@ $(document).ready(function () {
         temp_history = new_temp_history;
         humid_history = new_humid_history;
         label_timestamp = new_label_timestamp;
+        label_history = new_label_history;
         $("#history-rawdata").show();
         if (label_timestamp.length != 0) {
             uplotupdate();
@@ -1464,7 +1466,7 @@ $(document).ready(function () {
 
         if (raw_label_history.length == 0) return;
 
-        var new_label_timestamp = [];
+        var new_label_timestamp = [], new_label_history = [];
         let label_split = ['2000-00-00 99', '99', '00'];
         let hr_label_split = label_split[0].split(" ");
         var new_temp_history = [], new_humid_history = [];
@@ -1487,6 +1489,7 @@ $(document).ready(function () {
                 humid_buff = raw_humid_history[count];
                 index_buff = 1;
                 new_label_timestamp.push(Date.parse(hr_label_split[0] + " " + hr_label_split[1] + ":00") / 1000);
+                new_label_history.push(hr_label_split[0] + " " + hr_label_split[1] + ":00");
             } else {
                 temp_buff += raw_temp_history[count];
                 humid_buff += raw_humid_history[count];
@@ -1504,6 +1507,7 @@ $(document).ready(function () {
         temp_history = new_temp_history;
         humid_history = new_humid_history;
         label_timestamp = new_label_timestamp;
+        label_history = new_label_history;
         $("#history-rawdata").show();
         if (label_timestamp.length != 0) {
             uplotupdate();
@@ -1517,7 +1521,7 @@ $(document).ready(function () {
 
         if (raw_label_history.length == 0) return;
 
-        var new_label_timestamp = [];
+        var new_label_timestamp = [], new_label_history = [];
         let label_split = ['2000', '99', '00'];
         var new_temp_history = [], new_humid_history = [];
         let temp_buff, humid_buff, index_buff;
@@ -1539,6 +1543,7 @@ $(document).ready(function () {
                 humid_buff = raw_humid_history[count];
                 index_buff = 1;
                 new_label_timestamp.push(Date.parse(label_split[0] + "-" + label_split[1] + "-" + label_split[2] + " 00:00") / 1000);
+                new_label_history.push(label_split[0] + "-" + label_split[1] + "-" + label_split[2]);
             } else {
                 temp_buff += raw_temp_history[count];
                 humid_buff += raw_humid_history[count];
@@ -1556,6 +1561,7 @@ $(document).ready(function () {
         temp_history = new_temp_history;
         humid_history = new_humid_history;
         label_timestamp = new_label_timestamp;
+        label_history = new_label_history;
         $("#history-rawdata").show();
         if (label_timestamp.length != 0) {
             uplotupdate();
@@ -1569,6 +1575,7 @@ $(document).ready(function () {
         temp_history = raw_temp_history;
         humid_history = raw_humid_history;
         label_timestamp = raw_label_timestamp;
+        label_history = raw_label_history;
         if (label_timestamp.length != 0) {
             uplotupdate();
             tablechart();

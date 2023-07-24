@@ -292,7 +292,7 @@ if (!isset($activedevice)) {
         <div class="toast text-white bg-success border-0" data-delay="5000" style="position: absolute; bottom: 0; right: 0;">
             <div class="toast-header">
                 <i class="fa-solid fa-bell"></i>
-                <strong class="mr-auto"> IoTkiddie</strong>
+                <strong class="mr-auto"> NYH smart temp</strong>
                 <!-- <small>now</small> -->
                 <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -312,4 +312,4 @@ if (!isset($activedevice)) {
     var esp_id = <?= $_REQUEST['id'] ?>;
     var sk = '<?= $_SESSION['skey']; ?>';
 </script>
-<script type="text/javascript" src="js/04dht.js?n=8"></script>
+<script type="text/javascript" src="js/04dht.js?n=1"></script>
